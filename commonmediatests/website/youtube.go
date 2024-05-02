@@ -19,7 +19,7 @@ func printYoutubeResult(ipVersion, methodV4, ispV4, airCodeV4, RegionCode, langu
 		}
 		result += Green("视频缓存节点地域:") +
 			fmt.Sprintf(" %s(%s)", utils.FindAirCode(airCodeV4), strings.ToUpper(airCodeV4)) + "\n"
-		if RegionCode != "" {
+		if RegionCode != "" && RegionCode != "null" {
 			result += Green("Youtube识别地域:") +
 				fmt.Sprintf(" %s(%s)", utils.CountryCodeToCountryName(strings.ToLower(RegionCode)), RegionCode) + "\n"
 		}
@@ -30,7 +30,7 @@ func printYoutubeResult(ipVersion, methodV4, ispV4, airCodeV4, RegionCode, langu
 		}
 		result += Green("Video Cache Node Region:") +
 			fmt.Sprintf(" %s(%s)", utils.FindAirCode(airCodeV4), strings.ToUpper(airCodeV4)) + "\n"
-		if RegionCode != "" {
+		if RegionCode != "" && RegionCode != "null" {
 			result += Green("Youtube Recognized Region:") +
 				fmt.Sprintf(" %s(%s)", utils.CountryCodeToCountryName(strings.ToLower(RegionCode)), RegionCode) + "\n"
 		}
