@@ -15,25 +15,20 @@ func main() {
 	go func() {
 		http.Get("https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Foneclickvirt%2Fbacktrace&count_bg=%2323E01C&title_bg=%23555555&icon=sonarcloud.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false")
 	}()
-
+	fmt.Println(Green("项目地址:"), Yellow("https://github.com/oneclickvirt/CommonMediaTests"))
 	var (
 		res0, res1, res2 string
 		wg               sync.WaitGroup
 	)
-
 	languagePtr := flag.String("l", "", "Language parameter (en or zh)")
 	flag.Parse()
-
 	var language string
-
 	if *languagePtr == "" {
 		language = "zh"
 	} else {
 		language = *languagePtr
 	}
-
 	language = strings.ToLower(language)
-
 	switch language {
 	case "en":
 		wg.Add(3)
@@ -67,9 +62,7 @@ func main() {
 		fmt.Println("不支持的语言参数")
 		return
 	}
-
 	wg.Wait()
-
 	fmt.Println("----------------Netflix-----------------")
 	fmt.Printf(res0)
 	fmt.Println("----------------Youtube-----------------")
