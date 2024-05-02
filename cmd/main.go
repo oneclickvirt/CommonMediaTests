@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 	"sync"
-
+	. "github.com/oneclickvirt/CommonMediaTests/defaultset"
 	"github.com/oneclickvirt/CommonMediaTests/commonmediatests/netflix"
 	"github.com/oneclickvirt/CommonMediaTests/commonmediatests/website"
 )
