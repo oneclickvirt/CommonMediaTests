@@ -27,7 +27,7 @@ func printDisneyplusResult(ipVersion string, QueryStatus string, VerifyStatus in
 				result += Yellow("当前出口所在地区不能解锁DisneyPlus") + "\n"
 			} else {
 				result += Green("当前出口所在地区解锁DisneyPlus") + "\n"
-				result += Green("区域：") + QueryStatus + Green("区") + "\n"
+				result += Green("区域：") + QueryStatus + Green(" 区") + "\n"
 			}
 		}
 	} else if language == "en" {
@@ -46,7 +46,7 @@ func printDisneyplusResult(ipVersion string, QueryStatus string, VerifyStatus in
 				result += Yellow("The current exit region cannot unlock DisneyPlus") + "\n"
 			} else {
 				result += Green("The current exit region unlocks DisneyPlus") + "\n"
-				result += Green("Region: ") + QueryStatus + Green("region") + "\n"
+				result += Green("Region: ") + QueryStatus + Green(" region") + "\n"
 			}
 		}
 	}
