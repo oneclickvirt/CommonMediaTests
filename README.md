@@ -22,3 +22,6 @@ curl https://raw.githubusercontent.com/oneclickvirt/CommonMediaTests/main/cmt_in
 ```
 
 更多架构请查看 https://github.com/oneclickvirt/CommonMediaTests/releases/tag/output
+
+![图片](https://github.com/oneclickvirt/CommonMediaTests/assets/103393591/8d4e5aa9-1ab6-4452-af6b-ef3665a902d8)
+
