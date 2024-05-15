@@ -26,7 +26,7 @@
 curl https://raw.githubusercontent.com/oneclickvirt/CommonMediaTests/main/cmt_install.sh -sSf | sh
 ```
 
-无环境依赖，理论上适配所有系统和主流架构，更多架构请查看 https://github.com/oneclickvirt/securityCheck/releases/tag/output
+无环境依赖，理论上适配所有系统和主流架构，更多架构请查看 https://github.com/oneclickvirt/CommonMediaTests/releases/tag/output
 
 ![图片](https://github.com/oneclickvirt/CommonMediaTests/assets/103393591/8d4e5aa9-1ab6-4452-af6b-ef3665a902d8)
 
