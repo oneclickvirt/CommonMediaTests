@@ -1,6 +1,6 @@
 #!/bin/bash
 #From https://github.com/oneclickvirt/CommonMediaTests
-#2024.05.02
+#2024.05.21
 
 rm -rf cmt
 os=$(uname -s)
@@ -15,7 +15,7 @@ case $os in
       "i386" | "i686")
         wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-386
         ;;
-      "armv7l" | "armv8" | "armv8l" | "aarch64")
+      "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
         wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-arm64
         ;;
       *)
@@ -32,7 +32,7 @@ case $os in
       "i386" | "i686")
         wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-386
         ;;
-      "armv7l" | "armv8" | "armv8l" | "aarch64")
+      "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
         wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-arm64
         ;;
       *)
@@ -49,7 +49,7 @@ case $os in
       "i386" | "i686")
         wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-386
         ;;
-      "armv7l" | "armv8" | "armv8l" | "aarch64")
+      "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
         wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-arm64
         ;;
       *)
@@ -66,7 +66,7 @@ case $os in
       "i386" | "i686")
         wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-386
         ;;
-      "armv7l" | "armv8" | "armv8l" | "aarch64")
+      "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
         wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-arm64
         ;;
       *)
