@@ -5,10 +5,9 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
-	"sync"
-	. "github.com/oneclickvirt/CommonMediaTests/defaultset"
-	"github.com/oneclickvirt/CommonMediaTests/commonmediatests/netflix"
-	"github.com/oneclickvirt/CommonMediaTests/commonmediatests/website"
+
+	"github.com/oneclickvirt/CommonMediaTests/commediatests"
+	. "github.com/oneclickvirt/defaultset"
 )
 
 func main() {
@@ -16,12 +15,15 @@ func main() {
 		http.Get("https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Foneclickvirt%2FCommonMediaTests&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false")
 	}()
 	fmt.Println(Green("项目地址:"), Yellow("https://github.com/oneclickvirt/CommonMediaTests"))
-	var (
-		res0, res1, res2 string
-		wg               sync.WaitGroup
-	)
+	var showVersion bool
+	flag.BoolVar(&showVersion, "v", false, "show version")
 	languagePtr := flag.String("l", "", "Language parameter (en or zh)")
+	flag.BoolVar(&commediatests.EnableLoger, "e", false, "Enable logging")
 	flag.Parse()
+	if showVersion {
+		fmt.Println(commediatests.ComMediaTestsVersion)
+		return
+	}
 	var language string
 	if *languagePtr == "" {
 		language = "zh"
@@ -29,44 +31,6 @@ func main() {
 		language = *languagePtr
 	}
 	language = strings.ToLower(language)
-	switch language {
-	case "en":
-		wg.Add(3)
-		func() {
-			defer wg.Done()
-			res1, _ = website.YoutubeCheck("en")
-		}()
-		func() {
-			defer wg.Done()
-			res0, _ = netflix.Netflix("en")
-		}()
-		func() {
-			defer wg.Done()
-			res2, _ = website.Disneyplus("en")
-		}()
-	case "zh":
-		wg.Add(3)
-		func() {
-			defer wg.Done()
-			res1, _ = website.YoutubeCheck("zh")
-		}()
-		func() {
-			defer wg.Done()
-			res0, _ = netflix.Netflix("zh")
-		}()
-		func() {
-			defer wg.Done()
-			res2, _ = website.Disneyplus("zh")
-		}()
-	default:
-		fmt.Println("不支持的语言参数")
-		return
-	}
-	wg.Wait()
-	fmt.Println("----------------Netflix-----------------")
-	fmt.Printf(res0)
-	fmt.Println("----------------Youtube-----------------")
-	fmt.Printf(res1)
-	fmt.Println("---------------DisneyPlus---------------")
-	fmt.Printf(res2)
+	res := commediatests.MediaTests(language)
+	fmt.Printf(res)
 }

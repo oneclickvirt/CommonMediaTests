@@ -2,8 +2,9 @@ package website
 
 import (
 	"fmt"
-	. "github.com/oneclickvirt/CommonMediaTests/defaultset"
 	"sync"
+
+	. "github.com/oneclickvirt/defaultset"
 )
 
 func printDisneyplusResult(ipVersion string, QueryStatus string, VerifyStatus int, language string) string {

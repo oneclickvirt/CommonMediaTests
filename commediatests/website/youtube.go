@@ -5,8 +5,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/oneclickvirt/CommonMediaTests/commonmediatests/utils"
-	. "github.com/oneclickvirt/CommonMediaTests/defaultset"
+	"github.com/oneclickvirt/CommonMediaTests/commediatests/utils"
+	. "github.com/oneclickvirt/defaultset"
 )
 
 func printYoutubeResult(ipVersion, methodV4, ispV4, airCodeV4, RegionCode, language string) string {

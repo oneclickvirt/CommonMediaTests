@@ -2,8 +2,9 @@ package printer
 
 import (
 	"fmt"
-	"github.com/oneclickvirt/CommonMediaTests/commonmediatests/netflix/verify"
-	. "github.com/oneclickvirt/CommonMediaTests/defaultset"
+
+	"github.com/oneclickvirt/CommonMediaTests/commediatests/netflix/verify"
+	. "github.com/oneclickvirt/defaultset"
 )
 
 func Print(fr verify.FinalResult, language string) (string, error) {

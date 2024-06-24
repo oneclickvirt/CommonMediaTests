@@ -13,14 +13,9 @@
 - [x] 支持双语输出，以```-l```指定```zh```或```en```可指定输出的语言，未指定时默认使用中文输出
 - [x] 全平台编译支持
 
-## TODO
-
-- [ ] 三个测试项目完全整合到同一套请求体系中，目前未完全整合
-- [ ] 测试时检测为原生解锁还是DNS解锁
-
 ## 使用
 
-更新时间：2024.05.02
+更新时间：2024.06.24
 
 ```shell
 curl https://raw.githubusercontent.com/oneclickvirt/CommonMediaTests/main/cmt_install.sh -sSf | sh

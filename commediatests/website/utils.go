@@ -2,7 +2,7 @@ package website
 
 import (
 	"fmt"
-	"github.com/oneclickvirt/CommonMediaTests/commonmediatests/utils"
+	"github.com/oneclickvirt/CommonMediaTests/commediatests/utils"
 	"net"
 )
 

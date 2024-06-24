@@ -2,8 +2,8 @@ package netflix
 
 import (
 	"flag"
-	"github.com/oneclickvirt/CommonMediaTests/commonmediatests/netflix/printer"
-	"github.com/oneclickvirt/CommonMediaTests/commonmediatests/netflix/verify"
+	"github.com/oneclickvirt/CommonMediaTests/commediatests/netflix/printer"
+	"github.com/oneclickvirt/CommonMediaTests/commediatests/netflix/verify"
 )
 
 var custom = flag.String("custom", "", "自定义测试NF影片ID\n绝命毒师的ID是70143836")

@@ -1,24 +1,25 @@
 package verify
 
 import (
-	"github.com/oneclickvirt/CommonMediaTests/commonmediatests/netflix/util"
 	"strconv"
+
+	"github.com/oneclickvirt/CommonMediaTests/commediatests/netflix/util"
 )
 
-type IPv4Verifier struct {
+type IPv6Verifier struct {
 	Config
 	IP              string
 	unblockStatus   int
 	unblockTestChan chan UnblockTestResult
 }
 
-func (v *IPv4Verifier) Execute() *VerifyResponse {
+func (v *IPv6Verifier) Execute() *VerifyResponse {
 	var err error
 	var response VerifyResponse
 	v.unblockStatus = AreaUnavailable
-	response.Type = 1
+	response.Type = 2
 
-	if v.IP, err = util.DnsResolver(4); err != nil {
+	if v.IP, err = util.DnsResolver(6); err != nil {
 		response.StatusCode = NetworkUnrachable
 		return &response
 	}
@@ -68,13 +69,13 @@ func (v *IPv4Verifier) Execute() *VerifyResponse {
 	return &response
 }
 
-func (v *IPv4Verifier) upgradeStatus(status int) {
+func (v *IPv6Verifier) upgradeStatus(status int) {
 	if v.unblockStatus < status {
 		v.unblockStatus = status
 	}
 }
 
-func (v *IPv4Verifier) UnblockTest(MoiveID int) {
+func (v *IPv6Verifier) UnblockTest(MoiveID int) {
 
 	testURL := NetflixURL_PREFIX + strconv.Itoa(MoiveID)
 	if reCode, err := util.RequestIP(testURL, v.IP, v.LocalAddr, v.Proxy); err != nil {

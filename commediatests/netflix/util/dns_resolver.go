@@ -7,7 +7,6 @@ import (
 
 func DnsResolver(addrType int) (string, error) {
 	dns := "www.netflix.com"
-
 	if ns, err := net.LookupHost(dns); err != nil {
 		return "", err
 	} else {
