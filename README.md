@@ -25,3 +25,8 @@ curl https://raw.githubusercontent.com/oneclickvirt/CommonMediaTests/main/cmt_in
 
 ![图片](https://github.com/oneclickvirt/CommonMediaTests/assets/103393591/8d4e5aa9-1ab6-4452-af6b-ef3665a902d8)
 
+## 在Golang中使用
+
+```
+go get github.com/oneclickvirt/CommonMediaTests@latest
+```
