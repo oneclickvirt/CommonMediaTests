@@ -17,8 +17,39 @@
 
 更新时间：2024.06.24
 
+下载以及安装
+
 ```shell
 curl https://raw.githubusercontent.com/oneclickvirt/CommonMediaTests/main/cmt_install.sh -sSf | sh
+```
+
+使用
+
+```
+cmt
+```
+
+或
+
+```
+./cmt
+```
+
+进行测试
+
+```
+Usage of cmt:
+  -address string
+        本机网卡的IP
+  -custom string
+        自定义测试NF影片ID
+        绝命毒师的ID是70143836
+  -e    Enable logging
+  -l string
+        Language parameter (en or zh)
+  -proxy string
+        代理地址
+  -v    show version
 ```
 
 无环境依赖，理论上适配所有系统和主流架构，更多架构请查看 https://github.com/oneclickvirt/CommonMediaTests/releases/tag/output
