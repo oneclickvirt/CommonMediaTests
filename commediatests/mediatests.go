@@ -79,11 +79,11 @@ func MediaTests(language string) string {
 		return ""
 	}
 	wg.Wait()
-	result += Cyan("----------------Netflix-----------------\n")
+	result += White("----------------Netflix-----------------\n")
 	result += res0
-	result += Cyan("----------------Youtube-----------------\n")
+	result += White("----------------Youtube-----------------\n")
 	result += res1
-	result += Cyan("---------------DisneyPlus---------------\n")
+	result += White("---------------DisneyPlus---------------\n")
 	result += res2
 	return result
 }
