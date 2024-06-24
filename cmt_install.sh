@@ -1,7 +1,8 @@
 #!/bin/bash
 #From https://github.com/oneclickvirt/CommonMediaTests
-#2024.05.21
+#2024.06.24
 
+rm -rf /usr/bin/cmt
 rm -rf cmt
 os=$(uname -s)
 arch=$(uname -m)
@@ -82,4 +83,4 @@ case $os in
 esac
 
 chmod 777 cmt
-./cmt
+cp cmt /usr/bin/cmt
