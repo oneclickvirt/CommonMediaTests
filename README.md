@@ -56,6 +56,14 @@ Usage of cmt:
 
 ![图片](https://github.com/oneclickvirt/CommonMediaTests/assets/103393591/8d4e5aa9-1ab6-4452-af6b-ef3665a902d8)
 
+
+## 卸载
+
+```
+rm -rf /root/cmt
+rm -rf /usr/bin/cmt
+```
+
 ## 在Golang中使用
 
 ```
