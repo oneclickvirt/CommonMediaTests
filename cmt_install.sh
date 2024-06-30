@@ -32,78 +32,78 @@ cdn_urls=("https://cdn0.spiritlhl.top/" "http://cdn3.spiritlhl.net/" "http://cdn
 check_cdn_file
 
 case $os in
-  Linux)
-    case $arch in
-      "x86_64" | "x86" | "amd64" | "x64")
-        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-amd64"
-        ;;
-      "i386" | "i686")
-        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-386"
-        ;;
-      "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
-        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-arm64"
-        ;;
-      *)
-        echo "Unsupported architecture: $arch"
-        exit 1
-        ;;
-    esac
+Linux)
+  case $arch in
+  "x86_64" | "x86" | "amd64" | "x64")
+    wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-amd64"
     ;;
-  Darwin)
-    case $arch in
-      "x86_64" | "x86" | "amd64" | "x64")
-        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-amd64"
-        ;;
-      "i386" | "i686")
-        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-386"
-        ;;
-      "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
-        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-arm64"
-        ;;
-      *)
-        echo "Unsupported architecture: $arch"
-        exit 1
-        ;;
-    esac
+  "i386" | "i686")
+    wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-386"
     ;;
-  FreeBSD)
-    case $arch in
-      amd64)
-        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-amd64"
-        ;;
-      "i386" | "i686")
-        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-386"
-        ;;
-      "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
-        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-arm64"
-        ;;
-      *)
-        echo "Unsupported architecture: $arch"
-        exit 1
-        ;;
-    esac
-    ;;
-  OpenBSD)
-    case $arch in
-      amd64)
-        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-amd64"
-        ;;
-      "i386" | "i686")
-        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-386"
-        ;;
-      "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
-        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-arm64"
-        ;;
-      *)
-        echo "Unsupported architecture: $arch"
-        exit 1
-        ;;
-    esac
+  "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
+    wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-arm64"
     ;;
   *)
-    echo "Unsupported operating system: $os"
+    echo "Unsupported architecture: $arch"
     exit 1
     ;;
+  esac
+  ;;
+Darwin)
+  case $arch in
+  "x86_64" | "x86" | "amd64" | "x64")
+    wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-amd64"
+    ;;
+  "i386" | "i686")
+    wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-386"
+    ;;
+  "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
+    wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-arm64"
+    ;;
+  *)
+    echo "Unsupported architecture: $arch"
+    exit 1
+    ;;
+  esac
+  ;;
+FreeBSD)
+  case $arch in
+  amd64)
+    wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-amd64"
+    ;;
+  "i386" | "i686")
+    wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-386"
+    ;;
+  "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
+    wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-arm64"
+    ;;
+  *)
+    echo "Unsupported architecture: $arch"
+    exit 1
+    ;;
+  esac
+  ;;
+OpenBSD)
+  case $arch in
+  amd64)
+    wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-amd64"
+    ;;
+  "i386" | "i686")
+    wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-386"
+    ;;
+  "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
+    wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-arm64"
+    ;;
+  *)
+    echo "Unsupported architecture: $arch"
+    exit 1
+    ;;
+  esac
+  ;;
+*)
+  echo "Unsupported operating system: $os"
+  exit 1
+  ;;
 esac
 
 chmod 777 cmt
