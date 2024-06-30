@@ -15,12 +15,18 @@
 
 ## 使用
 
-更新时间：2024.06.24
+更新时间：2024.06.30
 
-下载以及安装
+下载、安装、升级
 
 ```shell
 curl https://raw.githubusercontent.com/oneclickvirt/CommonMediaTests/main/cmt_install.sh -sSf | sh
+```
+
+或
+
+```
+curl https://cdn.spiritlhl.net/https://raw.githubusercontent.com/oneclickvirt/CommonMediaTests/main/cmt_install.sh -sSf | sh
 ```
 
 使用
