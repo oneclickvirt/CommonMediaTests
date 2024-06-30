@@ -1,4 +1,4 @@
 package commediatests
 
-const ComMediaTestsVersion = "v0.0.1" // git tag v0.0.1
+const ComMediaTestsVersion = "v0.0.2"
 var EnableLoger bool

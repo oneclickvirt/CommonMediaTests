@@ -38,7 +38,7 @@ func printResult(ipVersion string, vResponse verify.VerifyResponse, language str
 			result += Green("您的出口IP可以观看此电影") + "\n"
 			result += Green("NF所识别的IP地域信息：") + vResponse.CountryName + "\n"
 		default:
-			result += Purple("解锁检测失败，请稍后重试") + "\n"
+			result += Yellow("解锁检测失败，请稍后重试") + "\n"
 		}
 	} else if language == "en" {
 		switch code := vResponse.StatusCode; {
@@ -61,7 +61,7 @@ func printResult(ipVersion string, vResponse verify.VerifyResponse, language str
 			result += Green("Your exit IP can watch this movie") + "\n"
 			result += Green("Netflix identified IP region: "+vResponse.CountryName) + "\n"
 		default:
-			result += Purple("Unlock detection failed, please try again later") + "\n"
+			result += Yellow("Unlock detection failed, please try again later") + "\n"
 		}
 	}
 	return result
