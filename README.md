@@ -20,13 +20,13 @@
 下载、安装、升级
 
 ```shell
-curl https://raw.githubusercontent.com/oneclickvirt/CommonMediaTests/main/cmt_install.sh -sSf | sh
+curl https://raw.githubusercontent.com/oneclickvirt/CommonMediaTests/main/cmt_install.sh -sSf | bash
 ```
 
 或
 
 ```
-curl https://cdn.spiritlhl.net/https://raw.githubusercontent.com/oneclickvirt/CommonMediaTests/main/cmt_install.sh -sSf | sh
+curl https://cdn.spiritlhl.net/https://raw.githubusercontent.com/oneclickvirt/CommonMediaTests/main/cmt_install.sh -sSf | bash
 ```
 
 使用
