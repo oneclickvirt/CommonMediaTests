@@ -1,23 +1,47 @@
 #!/bin/bash
 #From https://github.com/oneclickvirt/CommonMediaTests
-#2024.06.24
+#2024.06.30
 
 rm -rf /usr/bin/cmt
 rm -rf cmt
 os=$(uname -s)
 arch=$(uname -m)
 
+check_cdn() {
+  local o_url=$1
+  for cdn_url in "${cdn_urls[@]}"; do
+    if curl -sL -k "$cdn_url$o_url" --max-time 6 | grep -q "success" >/dev/null 2>&1; then
+      export cdn_success_url="$cdn_url"
+      return
+    fi
+    sleep 0.5
+  done
+  export cdn_success_url=""
+}
+
+check_cdn_file() {
+  check_cdn "https://raw.githubusercontent.com/spiritLHLS/ecs/main/back/test"
+  if [ -n "$cdn_success_url" ]; then
+    echo "CDN available, using CDN"
+  else
+    echo "No CDN available, no use CDN"
+  fi
+}
+
+cdn_urls=("https://cdn0.spiritlhl.top/" "http://cdn3.spiritlhl.net/" "http://cdn1.spiritlhl.net/" "http://cdn2.spiritlhl.net/")
+check_cdn_file
+
 case $os in
   Linux)
     case $arch in
       "x86_64" | "x86" | "amd64" | "x64")
-        wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-amd64
+        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-amd64"
         ;;
       "i386" | "i686")
-        wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-386
+        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-386"
         ;;
       "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
-        wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-arm64
+        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-linux-arm64"
         ;;
       *)
         echo "Unsupported architecture: $arch"
@@ -28,13 +52,13 @@ case $os in
   Darwin)
     case $arch in
       "x86_64" | "x86" | "amd64" | "x64")
-        wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-amd64
+        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-amd64"
         ;;
       "i386" | "i686")
-        wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-386
+        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-386"
         ;;
       "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
-        wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-arm64
+        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-darwin-arm64"
         ;;
       *)
         echo "Unsupported architecture: $arch"
@@ -45,13 +69,13 @@ case $os in
   FreeBSD)
     case $arch in
       amd64)
-        wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-amd64
+        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-amd64"
         ;;
       "i386" | "i686")
-        wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-386
+        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-386"
         ;;
       "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
-        wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-arm64
+        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-freebsd-arm64"
         ;;
       *)
         echo "Unsupported architecture: $arch"
@@ -62,13 +86,13 @@ case $os in
   OpenBSD)
     case $arch in
       amd64)
-        wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-amd64
+        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-amd64"
         ;;
       "i386" | "i686")
-        wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-386
+        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-386"
         ;;
       "armv7l" | "armv8" | "armv8l" | "aarch64" | "arm64")
-        wget -O cmt https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-arm64
+        wget -O cmt "${cdn_success_url}https://github.com/oneclickvirt/CommonMediaTests/releases/download/output/CommonMediaTests-openbsd-arm64"
         ;;
       *)
         echo "Unsupported architecture: $arch"
