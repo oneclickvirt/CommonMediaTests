@@ -15,8 +15,6 @@
 
 ## 使用
 
-更新时间：2024.06.30
-
 下载、安装、升级
 
 ```shell
@@ -44,18 +42,12 @@ cmt
 进行测试
 
 ```
-Usage of cmt:
-  -address string
-        本机网卡的IP
-  -custom string
-        自定义测试NF影片ID
-        绝命毒师的ID是70143836
+Usage: cmt [options]
   -e    Enable logging
+  -h    Show help information
   -l string
         Language parameter (en or zh)
-  -proxy string
-        代理地址
-  -v    show version
+  -v    Show version
 ```
 
 无环境依赖，理论上适配所有系统和主流架构，更多架构请查看 https://github.com/oneclickvirt/CommonMediaTests/releases/tag/output
