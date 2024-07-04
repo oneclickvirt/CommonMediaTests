@@ -1,4 +1,4 @@
 package commediatests
 
-const ComMediaTestsVersion = "v0.0.3"
+const ComMediaTestsVersion = "v0.0.4"
 var EnableLoger bool
