@@ -72,5 +72,5 @@ rm -rf /usr/bin/cmt
 ## 在Golang中使用
 
 ```
-go get github.com/oneclickvirt/CommonMediaTests@
+go get github.com/oneclickvirt/CommonMediaTests@v0.0.4-20250629044730
 ```
