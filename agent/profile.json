@@ -1,0 +1,35 @@
+{
+  "repository": "oneclickvirt/CommonMediaTests",
+  "branch": "main",
+  "skill_name": "oneclickvirt-commonmediatests",
+  "purpose": "Check the module's common streaming providers; preserve provider-specific unknown and failure results.",
+  "notes": [
+    "Read probe_help from the installed binary before assuming flags are supported. MCP returns native JSON when the program provides JSON, otherwise native text.",
+    "Keep partial/network errors distinct from confirmed test outcomes. Current release assets and their actual architecture are available through release_assets."
+  ],
+  "guide": "https://www.spiritlhl.net/guide/agent_integrations.html",
+  "releases": true,
+  "mcp": true,
+  "binary": "cmt",
+  "asset_prefix": "CommonMediaTests",
+  "presets": {
+    "media": {
+      "args": [
+        "-l",
+        "en"
+      ],
+      "timeout": 60
+    }
+  },
+  "benchmark": false,
+  "source_files": [
+    "cmd/main.go",
+    "cmt_install.sh",
+    "go.mod"
+  ],
+  "purpose_zh": "检测常用流媒体服务的访问状态，保留各平台未知和失败结果。",
+  "notes_zh": [
+    "先用 probe_help 核对已安装程序的实际帮助。程序支持 JSON 时返回原生 JSON，否则返回原生文本。",
+    "区分部分结果、网络失败和确定结论；通过 release_assets 查询当前真实产物及架构。"
+  ]
+}
